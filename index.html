@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
   <title>PTU Certificate</title>
 
   <style>
@@ -15,50 +15,53 @@
       margin: 0;
       padding: 0;
       width: 100%;
-      min-height: 100%;
+      height: 100%;
+      overflow: hidden;
       background: #f2f2f2;
     }
 
-    body {
-      overflow: auto;
-    }
-
-    .pdf-container {
+    .viewer {
       width: 100%;
-      min-height: 100vh;
-      padding: 0;
-      margin: 0 auto;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
     }
 
     iframe {
       display: block;
       width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      border: none;
+      height: 100%;
+      border: 0;
       background: white;
     }
 
-    @media (max-width: 600px) {
-      .pdf-container {
-        width: 100%;
-      }
+    .fallback {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      text-align: center;
+      font: 14px Arial, sans-serif;
+    }
 
-      iframe {
-        width: 100%;
-        height: 100dvh;
-        min-height: 500px;
-      }
+    .fallback a {
+      color: #075bc8;
     }
   </style>
 </head>
 
 <body>
-  <div class="pdf-container">
+  <div class="viewer">
     <iframe
-      src="./PTU.pdf#view=FitH"
+      src="./BAA%20%28E%29%20%281%29%20%281%29.pdf#view=FitH"
       title="PTU Certificate">
     </iframe>
+  </div>
+
+  <div class="fallback">
+    <a href="./BAA%20%28E%29%20%281%29%20%281%29.pdf">
+      Open PDF directly
+    </a>
   </div>
 </body>
 </html>
